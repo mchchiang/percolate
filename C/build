@@ -1,0 +1,11 @@
+rm -f percolate percolate.o  percinit.o  percfill.o  perctest.o  percupdate.o  percwrite.o  percsort.o  uni.o percolate.c~  percinit.c~  percfill.c~  perctest.c~  percupdate.c~  percwrite.c~  percsort.c~  uni.c~ core
+gcc -g -c percolate.c
+gcc -g -c percinit.c
+gcc -g -c percfill.c
+gcc -g -c perctest.c
+gcc -g -c percupdate.c
+gcc -g -c percwrite.c
+gcc -g -c percsort.c
+gcc -g -c uni.c
+gcc -g -o percolate percolate.o  percinit.o  percfill.o  perctest.o  percupdate.o  percwrite.o  percsort.o  uni.o -lm
+

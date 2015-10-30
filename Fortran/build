@@ -1,0 +1,11 @@
+rm -f percolate percfill.o  percinit.o  percolate.o  percsort.o  perctest.o  percupdate.o  percwrite.o  uni.o percfill.mod  percinit.mod  percolate.mod  percsort.mod  perctest.mod  percupdate.mod  percwrite.mod  uni.mod percfill.f90~  percinit.f90~  percolate.f90~  percsort.f90~  perctest.f90~  percupdate.f90~  percwrite.f90~  uni.f90~ core
+gfortran -c -C uni.f90
+gfortran -c -C percfill.f90
+gfortran -c -C percinit.f90
+gfortran -c -C percupdate.f90
+gfortran -c -C perctest.f90
+gfortran -c -C percsort.f90
+gfortran -c -C percwrite.f90
+gfortran -c -C percolate.f90
+gfortran -C -o percolate percfill.o  percinit.o  percolate.o  percsort.o  perctest.o  percupdate.o  percwrite.o  uni.o 
+
