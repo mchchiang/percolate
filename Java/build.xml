@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<project name="percolate" default="default">
+
+	<path id="classpath">
+		<pathelement location="build/classes"/>
+		<pathelement location="build/classes/percolate"/>
+		<pathelement location="build/test/classes"/>
+		<fileset dir=".">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="default" depends="compile" description="default">
+		
+	</target>
+
+	<target name="init" description="make build directories">
+		<mkdir dir="build"/>
+		<mkdir dir="build/classes"/>
+		<mkdir dir="build/lib"/>
+		<mkdir dir="build/test/classes"/>
+	</target>
+
+	<target name="compile" depends="init" description="compile the code">
+		<javac srcdir="src" destdir="build/classes" classpathref="classpath">
+			<include name="**/*.java"/>
+		</javac>
+	</target>
+	
+	<target name="compile-test" depends="compile" description="compile the test">
+		<javac srcdir="test" destdir="build/test/classes" classpathref="classpath">
+			<include name="**/*.java"/>
+		</javac>
+	</target>
+
+	<target name="run" depends="compile" description="run the code">
+		<java classname="percolate.Percolate" classpathref="classpath"/>
+	</target>
+
+	<target name="clear" description="Clear the build directory">
+		<delete dir="build"/>
+	</target>
+</project>
